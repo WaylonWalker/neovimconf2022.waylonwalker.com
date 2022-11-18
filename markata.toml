@@ -80,8 +80,8 @@ icon = "icon.png"
 # overlay_brightness_light = '.95'
 
 [markata.nav]
-'Home'='/'
-'All Posts'='/archive'
+'The Pitch'='/'
+'slides'='/extending-vim/slide-0/'
 
 [markata.prevnext]
 # strategy can be 'first' or 'all'
