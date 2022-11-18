@@ -17,7 +17,7 @@ authors = [
 ]
 
 
-dependencies = ['markata~=0.5.0.dev0', 'markata-slides']
+dependencies = ['markata~=0.5.0.dev0', 'markata-slides', 'markdown-it-py[plugins]']
 dynamic = ["version"]
 
 [tool.hatch.version]

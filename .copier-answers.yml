@@ -8,4 +8,3 @@ description: ..
 project_name: extending vim with shell commands
 python_package_import_name: nvimconf
 url: https://neovimconf2022.waylonwalker.com
-
