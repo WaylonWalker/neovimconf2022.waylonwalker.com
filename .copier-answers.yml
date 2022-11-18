@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier
+_commit: v1
+_src_path: git+https://github.com/WaylonWalker/markata-blog-starter
+author_email: waylon@waylonwalker.com
+author_fullname: Waylon Walker
+author_twitter: '@_waylonwalker'
+description: ..
+project_name: extending vim with shell commands
+python_package_import_name: nvimconf
+url: https://neovimconf2022.waylonwalker.com
+
