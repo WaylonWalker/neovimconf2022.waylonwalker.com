@@ -59,7 +59,7 @@ background_color = "#B73CF6"
 start_url = "/"
 short_name = "extending vim with shell commands"
 display = "minimal-ui"
-icon = "icon.png"
+icon = "neovim-favicon.png"
 
 
 # use a different template than the built in one
