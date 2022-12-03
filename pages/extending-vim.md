@@ -18,13 +18,101 @@ codeformatters with autocmds, using lf/ranger as a tui file manager, generating
 new files using a template framework like cookiecutter/copier/yeoman, using ag
 to populate your quickfix.
 
+## Plugins
+
+Plugins are awesome, this talk will not focus on plugins, but will use them when it makes sense.
+
+## vimscript / lua
+
+lua is an amazing feature of neovom.  Both let you extend neovim in amazing
+ways with little effort, but there quickly becomes a limit where you need to
+learn a lot more about it to do what you need.
+
+## why a cli
+
+A cli is going to be slower than vimscript/lua in many cases, but its often
+something that you already know.  If you write any sort of code its very likely
+that you can write a cli in that language that you are familiar with and get
+the benefits of all your familiar tooling.
+
+* familiarity
+* low barrier to entry
+* works good enough
+
 ## run a command
 
-```
+``` bash
 vimconf!!<esc>!!figlet
 ```
 
-## formatters
+run it
+
+``` txt
+       _                            __ _ _ 
+__   _(_)_ __ ___   ___ ___  _ __  / _| | |
+\ \ / / | '_ ` _ \ / __/ _ \| '_ \| |_| | |
+ \ V /| | | | | | | (_| (_) | | | |  _|_|_|
+  \_/ |_|_| |_| |_|\___\___/|_| |_|_| (_|_)
+                                           
+```
+
+## for .! to work your cli must accept stdin
+
+Many formatters don't support stdin so I made a little shim `genericformat` 
+
+``` bash
+genericformat --help
+
+usage: genericformat [-h] --formatter FORMATTER [code]
+
+format some code with a formatter
+
+positional arguments:
+  code                  the code to format
+
+options:
+  -h, --help            show this help message and exit
+  --formatter FORMATTER
+                        path to the formatter to run
+```
+
+## format some code
+
+Format this one python statement.
+
+```python
+print('here')
+```
+
+press !!genericformat --formatter black<cr>
+
+```python
+print('here')
+```
+
+
+Now try a multiline statement.
+
+``` python
+def func(arg_one, arg_two, arg_three, kwarg='one',):
+   ...
+```
+
+press Vj!!genericformat --formatter black<cr>
+
+``` python
+def func(
+    arg_one,
+    arg_two,
+    arg_three,
+    kwarg="one",
+):
+    ...
+```
+
+
+## using BufWritePost for formatters
+
 
 ``` lua
 local settings = require'waylonwalker.settings'
@@ -43,6 +131,16 @@ autocmd({ "BufWritePost" }, {
     pattern = { "*.py" },
     callback = M.format_python,
 })
+```
+
+## File Navigation
+_markata_
+
+I built my own static site generator, one thing that it can do pretty well is
+navigate through large sets of posts and list out their path.  I can pipe this right into 
+
+``` bash
+markata list --map path --filter '"til" in path' --fast --no-pager
 ```
 
 ## File Navigation
