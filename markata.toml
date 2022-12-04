@@ -10,7 +10,7 @@
 [markata]
 # bump site version to bust GitHub actions cache
 version = 0
-body_width='1080px'
+body_width='calc(1280px + 4rem)'
 
 # 2 weeks in seconds
 default_cache_expire = 1209600
@@ -230,3 +230,29 @@ sort="date"
 filter="date>today or not post.get('published', False)"
 sort="date"
 
+[[markata.head.text]]
+value = """
+<style>
+h1 {
+    font-size: 1.63rem;
+    text-align: center;
+    margin: 0;
+}
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+main {
+    background: rgba(0, 0, 0, .25);
+    padding: 2rem;
+    min-height: calc(720px + 4rem);
+    display: flex;
+    flex-direction: column;
+}
+.prevnext {
+    justify-content: flex-end;
+    margin-top: auto;
+}
+
+</style>
+"""
