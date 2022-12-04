@@ -38,8 +38,11 @@ the benefits of all your familiar tooling.
 * familiarity
 * low barrier to entry
 * works good enough
+* works cross editor
 
 ## run a command
+
+Lets start with some cli's.
 
 ``` bash
 vimconf!!<esc>!!figlet
@@ -55,6 +58,39 @@ __   _(_)_ __ ___   ___ ___  _ __  / _| | |
   \_/ |_|_| |_| |_|\___\___/|_| |_|_| (_|_)
                                            
 ```
+
+## Chat
+
+What should we run.
+
+
+
+## So what's going on here
+
+!!! note ""
+    :.! works on standard unix pipes
+
+-> Your input is piped into the command as stdin. ->
+
+```
+echo "vimconf" | figlet
+```
+
+-> Then replaced with what comes from stdout. ->
+
+## A lot of things dont work on stdin/stdout
+
+For instance many formatters work out of fileio, so I made a small, crappy,
+works for me, shim, `genericformat`.
+
+``` bash
+pipx install genericformat
+```
+
+---
+
+!!! danger
+    use it if it works for you, it works for me
 
 ## for .! to work your cli must accept stdin
 
@@ -109,9 +145,40 @@ def func(
     ...
 ```
 
+## using BufWritePost for formatters
+
+My old config written in vimscript if you care.
+
+``` vim
+function! s:PyPreSave()
+    Black
+endfunction
+
+function! s:PyPostSave()
+    execute "!tidy-imports --black --quiet --replace-star-imports --action REPLACE " . bufname("%")
+    execute "!isort " . bufname("%")
+    execute "!black " . bufname("%")
+    execute "e"
+endfunction
+
+:command! PyPreSave :call s:PyPreSave()
+:command! PyPostSave :call s:PyPostSave()
+
+augroup waylonwalker
+    autocmd!
+    autocmd bufwritepre *.py silent! execute 'PyPreSave'
+    autocmd bufwritepost *.py silent! execute 'PyPostSave'
+augroup end
+```
+
+## Lua all the things
+
+This is **neovimconf** after all
+
 
 ## using BufWritePost for formatters
 
+My latest config written in `lua`.
 
 ``` lua
 local settings = require'waylonwalker.settings'
@@ -131,6 +198,27 @@ autocmd({ "BufWritePost" }, {
     callback = M.format_python,
 })
 ```
+
+## File Navigation
+_rg_
+
+List **all** your files
+
+``` bash
+rg --files
+```
+
+use `gf` to go to file under the cursor
+
+### map it
+
+``` vim
+nnoremap <leader> f :new<cr>:.!rg --files<cr>
+```
+
+
+!!! Note
+    I use and reccomend Telescope, but `gf` can work fantasic without any setup.
 
 ## File Navigation
 _markata_
