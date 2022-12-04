@@ -87,9 +87,8 @@ print('here')
 press !!genericformat --formatter black<cr>
 
 ```python
-print('here')
+print("here")
 ```
-
 
 Now try a multiline statement.
 
