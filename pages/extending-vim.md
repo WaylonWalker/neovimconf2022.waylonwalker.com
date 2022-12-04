@@ -18,6 +18,13 @@ codeformatters with autocmds, using lf/ranger as a tui file manager, generating
 new files using a template framework like cookiecutter/copier/yeoman, using ag
 to populate your quickfix.
 
+## Me
+
+```
+tmux popup -E pipx run waylonwalker
+```
+
+
 ## Plugins
 
 Plugins are awesome, this talk will not focus on plugins, but will use them when it makes sense.
@@ -61,7 +68,24 @@ __   _(_)_ __ ___   ___ ___  _ __  / _| | |
 
 ## Chat
 
-What should we run.
+
+```
+__        ___           _         _                 _     _                
+\ \      / / |__   __ _| |_   ___| |__   ___  _   _| | __| | __      _____ 
+ \ \ /\ / /| '_ \ / _` | __| / __| '_ \ / _ \| | | | |/ _` | \ \ /\ / / _ \
+  \ V  V / | | | | (_| | |_  \__ \ | | | (_) | |_| | | (_| |  \ V  V /  __/
+   \_/\_/  |_| |_|\__,_|\__| |___/_| |_|\___/ \__,_|_|\__,_|   \_/\_/ \___|
+                                                                           
+                    
+ _ __ _   _ _ __    
+| '__| | | | '_ \   
+| |  | |_| | | | |_ 
+|_|   \__,_|_| |_(_)
+                    
+```
+
+!!! danger ""
+    gimme a command
 
 
 
@@ -133,7 +157,7 @@ def func(arg_one, arg_two, arg_three, kwarg='one',):
    ...
 ```
 
-press Vj!!genericformat --formatter black<cr>
+press Vj!genericformat --formatter black<cr>
 
 ``` python
 def func(
@@ -142,6 +166,27 @@ def func(
     arg_three,
     kwarg="one",
 ):
+    ...
+```
+
+Want Docstrings???
+
+press V6j!doq
+
+``` python
+def func(
+    arg_one,
+    arg_two,
+    arg_three,
+    kwarg="one",
+):
+    """func.
+
+    :param arg_one:
+    :param arg_two:
+    :param arg_three:
+    :param kwarg:
+    """
     ...
 ```
 
