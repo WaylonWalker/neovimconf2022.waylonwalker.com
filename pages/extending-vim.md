@@ -20,10 +20,17 @@ to populate your quickfix.
 
 ## Me
 
+* Husband
+* Father of two
+* Eater of spicy shit
+
 ```
 tmux popup -E pipx run waylonwalker
 ```
 
+![one chip challenge](/paqui.jpg)
+
+pipx run waylonwalker
 
 ## Plugins
 
