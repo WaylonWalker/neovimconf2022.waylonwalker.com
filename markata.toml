@@ -81,6 +81,7 @@ icon = "neovim-favicon.png"
 # overlay_brightness_light = '.95'
 
 [markata.nav]
+'Conference Home Page'='https://www.neovimconf.live/'
 'The Pitch'='/'
 'slides'='/extending-vim/slide-0/'
 'GitHub'='https://github.com/WaylonWalker/neovimconf2022.waylonwalker.com'
