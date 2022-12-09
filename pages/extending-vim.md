@@ -20,15 +20,16 @@ to populate your quickfix.
 
 ## Me
 
+
 * Husband
 * Father of two
 * Eater of spicy shit
 
+``` vim
+:term pipx run waylonwalker
 ```
-tmux popup -E pipx run waylonwalker
-```
+<img alt='one chip challenge' src='/paqui.jpg' style='width:250px; float: right;position:absolute;right:500px;'/>
 
-![one chip challenge](/paqui.jpg)
 
 pipx run waylonwalker
 
@@ -36,11 +37,17 @@ pipx run waylonwalker
 
 Plugins are awesome, this talk will not focus on plugins, but will use them when it makes sense.
 
+!!! Note ""
+    A lot can be done with the command line
+
 ## vimscript / lua
 
-lua is an amazing feature of neovom.  Both let you extend neovim in amazing
+lua is an amazing feature of neovim.  Both let you extend neovim in amazing
 ways with little effort, but there quickly becomes a limit where you need to
 learn a lot more about it to do what you need.
+
+!!! Note ""
+    lua can be a deep rabbit hole
 
 ## why a cli
 
@@ -53,6 +60,9 @@ the benefits of all your familiar tooling.
 * low barrier to entry
 * works good enough
 * works cross editor
+
+!!! Note ""
+    Start with something you are comfortable in
 
 ## run a command
 
@@ -225,7 +235,8 @@ augroup end
 
 ## Lua all the things
 
-This is **neovimconf** after all
+!!! Note ""
+    This is **neovimconf** after all
 
 
 ## using BufWritePost for formatters
